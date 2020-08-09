@@ -12,7 +12,9 @@ if __name__ == '__main__':
   #  algo = photo[50:150:1, ::1] # recorta un rect y=50 , x = 150
   #  algo = photo[50::1, ::1] # diferente: le quita 50 pix de arriba
   #  algo = photo[0:1:1, ::1]  #(1, 1920, 3) A:B:Scala, C:D:Scala, A >= B
-    algo = photo[50:51:, ::]  #  (1, 1920, 3) OK
+  #  algo = photo[0:100:, ::]  #  (100, 1920, 3)
+  #  algo = photo[100:200:, ::]  # (100, 1920, 3) OK
+    algo = photo[100:200:, 50:150:]  # (100, 100, 3) OK
     print(algo.shape)
     img = Image.fromarray(algo, 'RGB')
 
